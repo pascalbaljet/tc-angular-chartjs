@@ -1,9 +1,14 @@
 /**
- * tc-angular-chartjs - v1.0.13 - 2016-01-04
+ * tc-angular-chartjs - v1.0.15 - 2016-01-21
  * Copyright (c) 2016 Carl Craig <carlcraig.threeceestudios@gmail.com>
  * Dual licensed with the Apache-2.0 or MIT license.
  */
-(function() {
+(function(factory) {
+    "use strict";
+    if (typeof exports === "object") {
+        module.exports = factory(typeof angular !== "undefined" ? angular : require("angular"), typeof Chart !== "undefined" ? Chart : require("chart.js"));
+    }
+})(function(angular, Chart) {
     "use strict";
     angular.module("tc.chartjs", []).directive("tcChartjs", TcChartjs).directive("tcChartjsLine", TcChartjsLine).directive("tcChartjsBar", TcChartjsBar).directive("tcChartjsRadar", TcChartjsRadar).directive("tcChartjsPolararea", TcChartjsPolararea).directive("tcChartjsPie", TcChartjsPie).directive("tcChartjsDoughnut", TcChartjsDoughnut).directive("tcChartjsLegend", TcChartjsLegend).factory("TcChartjsFactory", TcChartjsFactory);
     function TcChartjs(TcChartjsFactory) {
@@ -158,4 +163,4 @@
             }, true);
         }
     }
-})();
+});
