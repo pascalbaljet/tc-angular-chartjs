@@ -3,7 +3,15 @@
  * tc-angular-chartjs is dual licensed with the Apache-2.0 or MIT license.
  */
 
-(function () {
+(function (factory) {
+  'use strict';
+  if (typeof exports === 'object') {
+    // Node/CommonJS
+    module.exports = factory(
+      typeof angular !== 'undefined' ? angular : require('angular'),
+      typeof Chart !== 'undefined' ? Chart : require('chart.js'));
+  }
+}(function (angular, Chart) {
   'use strict';
   angular
     .module( 'tc.chartjs', [] )
@@ -192,4 +200,4 @@
     }
   }
 
-})();
+}));
